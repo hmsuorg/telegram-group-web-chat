@@ -1,5 +1,5 @@
 const telegraf = require("telegraf");
-const log = msg => { msg = `[${new Date().toISOString()}] ${msg}`; console.log(msg); };
+const log = msg => { console.log(`[${new Date().toISOString()}] ${msg}`); };
 const express = require("express");
 const app = express();
 const path = require("path");
