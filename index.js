@@ -8,7 +8,7 @@ const io = require("socket.io")(server);
 const port = process.env.PORT || 3000;
 const groupId = Number(process.env.GROUP_ID);
 
-// chat history
+// partial chat history
 let chatHistory = [];
 const chatHistoryLimit = 50;
 const addChatHistory = (username, message) => {
@@ -17,7 +17,7 @@ const addChatHistory = (username, message) => {
 		username: username,
 		message: message
 	});
-	if(chatHistory.length > 50) chatHistory.shift();
+	if(chatHistory.length > chatHistoryLimit) chatHistory.shift();
 };
 
 // telegram bot
