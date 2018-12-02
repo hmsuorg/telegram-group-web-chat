@@ -246,6 +246,10 @@ $(function() {
   // Whenever the server emits 'login', log the login message
   socket.on('login', (data) => {
     connected = true;
+    // Clear previous messages
+    $("ul.messages").empty();
+    // TOOD: receive only new ones, check timestamp with server
+
     // Display the welcome message
     var message = "Welcome to BombaSklad";
     log(message, {
